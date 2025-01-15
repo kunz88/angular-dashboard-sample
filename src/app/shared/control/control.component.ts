@@ -1,4 +1,11 @@
-import { Component, input, ViewEncapsulation } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  contentChild,
+  ElementRef,
+  input,
+  ViewEncapsulation,
+} from '@angular/core';
 
 @Component({
   selector: 'app-control',
@@ -12,5 +19,13 @@ import { Component, input, ViewEncapsulation } from '@angular/core';
   },
 })
 export class ControlComponent {
+  private controlElement =
+    contentChild.required<ElementRef<HTMLInputElement | HTMLTextAreaElement>>(
+      'input'
+    );
   label = input.required<string>();
+
+  onclick() {
+    console.log(this.controlElement);
+  }
 }

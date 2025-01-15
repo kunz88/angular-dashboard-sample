@@ -20,6 +20,6 @@
   transition: transform 0.2s ease-in-out;
 }
 
-:host:hover .icon {
+:host:hover.icon {
   transform: translateX(4px);
 }
